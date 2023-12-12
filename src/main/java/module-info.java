@@ -7,4 +7,9 @@ module com.bankwibu.tubespbo {
 
     opens com.bankwibu.tubespbo to javafx.fxml;
     exports com.bankwibu.tubespbo;
+    exports com.bankwibu.tubespbo.Controllers;
+    exports com.bankwibu.tubespbo.Controllers.Admin;
+    exports com.bankwibu.tubespbo.Controllers.Client;
+    exports com.bankwibu.tubespbo.Models;
+    exports com.bankwibu.tubespbo.Views;
 }
