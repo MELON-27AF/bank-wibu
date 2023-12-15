@@ -3,21 +3,25 @@ package com.bankwibu.tubespbo.Views;
 import com.bankwibu.tubespbo.Controllers.Client.ClientController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 public class ViewFactory {
     // Client Views
     private final StringProperty clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
+    private AnchorPane accountView;
 
     public ViewFactory(){
         this.clientSelectedMenuItem = new SimpleStringProperty("");
     }
 
+    /*
+    * Client View Section
+     **/
     public StringProperty getClientSelectedMenuItem() {
         return clientSelectedMenuItem;
     }
@@ -42,6 +46,17 @@ public class ViewFactory {
             }
         }
         return transactionsView;
+    }
+
+    public AnchorPane getAccountView() {
+        if (accountView == null){
+            try {
+                accountView = new FXMLLoader(getClass().getResource("/Fxml/Client/Accounts.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return accountView;
     }
 
     public void showLoginWindow() {

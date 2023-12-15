@@ -48,7 +48,7 @@
                </DropShadow>
             </effect>
          </Button>
-         <Button fx:id="transaction_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #EEF0E5; -fx-cursor: HAND;" text="Transaction">
+         <Button fx:id="transaction_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #EEF0E5; -fx-cursor: HAND;" text="Transaction">
             <graphic>
                <FontAwesomeIconView fill="#f05941" glyphName="HANDSHAKE_ALT" size="20" />
             </graphic>
