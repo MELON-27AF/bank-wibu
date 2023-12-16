@@ -15,11 +15,20 @@ public class AdminMenuController implements Initializable {
     public Button logout_btn;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        addListeners();
+    }
 
-    private void addListeners(){}
+    private void addListeners(){
+        create_client_btn.setOnAction(actionEvent -> onCreateClient());
+        clients_btn.setOnAction(actionEvent -> onClients());
+    }
 
     private void onCreateClient() {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CREATE_CLIENT);
+    }
+
+    private void onClients() {
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CLIENTS);
     }
 }
