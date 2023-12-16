@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bankwibu.tubespbo.Controllers.Admin.CreateClientController">
+    <Text fill="#818181" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Client Account">
+        <font>
+          <Font name="System Bold" size="18.0" />
+        </font>
+    </Text>
+    <VBox fillWidth="false" layoutX="14.0" layoutY="42.0" prefHeight="700.0" prefWidth="600.0" style="-fx-border-color: #818181; -fx-border-width: 0 0 0 1;">
+        <padding>
+            <Insets left="10.0" />
+        </padding>
+        <Text fill="#818181" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <TextField fx:id="fName_fld" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" offsetX="3.0" offsetY="3.0">
+                    <color>
+                        <Color red="0.5058823823928833" green="0.5058823823928833" blue="0.5058823823928833" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </TextField>
+        <Text fill="#818181" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <TextField fx:id="lName_fld" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" offsetX="3.0" offsetY="3.0">
+                    <color>
+                        <Color red="0.5058823823928833" green="0.5058823823928833" blue="0.5058823823928833" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </TextField>
+        <Text fill="#818181" layoutX="10.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <TextField fx:id="password_fld" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" offsetX="3.0" offsetY="3.0">
+                    <color>
+                        <Color red="0.5058823823928833" green="0.5058823823928833" blue="0.5058823823928833" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </TextField>
+        <Text fill="#818181" layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payee Address:">
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <CheckBox fx:id="pAddress_box" mnemonicParsing="false">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+        </CheckBox>
+        <Label fx:id="pAddress_lbl" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #818181; -fx-background-radius: 3;" text="Label" textFill="WHITE">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+        </Label>
+        <Text fill="#818181" layoutX="10.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accounts:">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <CheckBox fx:id="ch_acc_box" mnemonicParsing="false" text="Add Checking Account">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+        </CheckBox>
+        <Text fill="#818181" layoutX="10.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checking Account Balance:">
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <TextField fx:id="ch_amount_fld" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" offsetX="3.0" offsetY="3.0">
+                    <color>
+                        <Color red="0.5058823823928833" green="0.5058823823928833" blue="0.5058823823928833" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </TextField>
+        <CheckBox fx:id="sv_acc_box" layoutX="10.0" layoutY="208.0" mnemonicParsing="false" text="Add Savings Account">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+        </CheckBox>
+        <Text fill="#818181" layoutX="10.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saving Account Balance:">
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <TextField fx:id="sv_amount_fld" layoutX="10.0" layoutY="244.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" offsetX="3.0" offsetY="3.0">
+                    <color>
+                        <Color red="0.5058823823928833" green="0.5058823823928833" blue="0.5058823823928833" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </TextField>
+        <Button fx:id="create_client_btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f05941; -fx-cursor: HAND;" text="Create New Client">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" offsetX="3.0" offsetY="3.0">
+                    <color>
+                        <Color red="0.5058823823928833" green="0.5058823823928833" blue="0.5058823823928833" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Label fx:id="error_lbl" layoutX="10.0" layoutY="172.0" text="Error:" textFill="RED">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+        </Label>
+    </VBox>
+</AnchorPane>

@@ -33,7 +33,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="acc_selector" prefWidth="150.0" style="-fx-background-color: #872341;">
+      <ChoiceBox fx:id="acc_selector" prefWidth="150.0" style="-fx-background-color: #068FFF; -fx-cursor: HAND;">
          <VBox.margin>
             <Insets bottom="15.0" />
          </VBox.margin>
@@ -64,7 +64,7 @@
             <Insets bottom="15.0" />
          </VBox.margin>
       </TextField>
-      <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="381.0" style="-fx-background-color: #F05941; -fx-cursor: HAND;" text="Login" textFill="WHITE">
+      <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="381.0" style="-fx-background-color: #068FFF; -fx-cursor: HAND;" text="Login" textFill="WHITE">
          <VBox.margin>
             <Insets bottom="15.0" />
          </VBox.margin>
