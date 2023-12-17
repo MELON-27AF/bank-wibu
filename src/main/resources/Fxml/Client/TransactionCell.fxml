@@ -13,8 +13,7 @@
 
 
 <AnchorPane prefHeight="60.0" prefWidth="550.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.bankwibu.tubespbo.Controllers.Client.TransactionCellController">
+            xmlns:fx="http://javafx.com/fxml/1">
    <effect>
       <DropShadow offsetX="5.0" offsetY="5.0">
          <color>
