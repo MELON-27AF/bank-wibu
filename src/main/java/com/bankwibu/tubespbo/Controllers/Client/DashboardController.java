@@ -3,6 +3,7 @@ package com.bankwibu.tubespbo.Controllers.Client;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import com.bankwibu.tubespbo.Models.Model;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,5 +25,6 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.user_name.setText("Hi, " + Model.getInstance().getClient().firstNameProperty().get());
     }
 }

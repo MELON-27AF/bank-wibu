@@ -16,13 +16,12 @@ public class DatabaseDriver {
     /*
     * Client Section
      **/
-
-    public ResultSet getClientData(String pAddress, String password) {
+    public ResultSet getClientData(String username, String password) {
         Statement statement;
         ResultSet resultSet = null;
         try{
             statement = this.conn.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='"+pAddress+"' AND Password='"+password+"';");
+            resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='"+username+"' AND Password='"+password+"';");
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -32,8 +31,20 @@ public class DatabaseDriver {
     /*
     * Admin Section
      **/
+    public ResultSet getAdminData(String username, String password) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try{
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Admins WHERE Username='"+username+"' AND Password='"+password+"';");
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
 
     /*
     * Utility Section
      **/
+
 }

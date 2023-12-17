@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.time.LocalDate;
+import java.util.BitSet;
 
 public class Client {
     private final StringProperty firstName;
@@ -15,11 +16,11 @@ public class Client {
     private final ObjectProperty<Account> savingsAccount;
     private final ObjectProperty<LocalDate> dateCreated;
 
-    public Client(String fName, String lName, String pAddress, Account cAccount, Account sAccount, LocalDate date) {
+    public Client(String fName, String lName, String username, Account cAccount, Account sAccount, LocalDate date) {
         this.firstName = new SimpleStringProperty(this, "First Name", fName);
         this.lastName = new SimpleStringProperty(this, "Last Name", lName);
-        this.payeeAddress = new SimpleStringProperty(this, "Payee Address", pAddress);
-        this.checkingAccount = new SimpleObjectProperty<>(this, "Cheking Account", cAccount);
+        this.payeeAddress = new SimpleStringProperty(this, "Payee Address", username);
+        this.checkingAccount = new SimpleObjectProperty<>(this, "Checking Account", cAccount);
         this.savingsAccount = new SimpleObjectProperty<>(this, "Savings Account", sAccount);
         this.dateCreated = new SimpleObjectProperty<>(this, "Date", date);
     }
@@ -28,7 +29,7 @@ public class Client {
 
     public StringProperty lastNameProperty() {return lastName;}
 
-    public StringProperty pAddressProperty() {return payeeAddress;}
+    public StringProperty usernameProperty() {return payeeAddress;}
 
     public ObjectProperty<Account> checkingAccountProperty() {return checkingAccount;}
 

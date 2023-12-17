@@ -44,7 +44,18 @@ public class LoginController implements Initializable {
                 error_lbl.setText("No Such Login Credentials.");
             }
         } else {
-            Model.getInstance().getViewFactory().showAdminWindow();
+            //Model.getInstance().getViewFactory().showAdminWindow();
+            // Evaluate Admin Login Credentials
+            Model.getInstance().evaluateAdminCred(username_fld.getText(), password_fld.getText());
+            if (Model.getInstance().getAdminLoginSuccessFlag()){
+                Model.getInstance().getViewFactory().showAdminWindow();
+                // Close the login stage
+                Model.getInstance().getViewFactory().closeStage(stage);
+            } else {
+                username_fld.setText("");
+                password_fld.setText("");
+                error_lbl.setText("No Such Login Credentials.");
+            }
         }
     }
 }
