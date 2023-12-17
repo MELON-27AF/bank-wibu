@@ -95,7 +95,7 @@
                 <Insets bottom="15.0" />
             </VBox.margin>
         </CheckBox>
-        <Label fx:id="pAddress_lbl" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #818181; -fx-background-radius: 3;" text="Label" textFill="WHITE">
+        <Label fx:id="pAddress_lbl" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #818181; -fx-background-radius: 3;" textFill="WHITE">
             <VBox.margin>
                 <Insets bottom="15.0" />
             </VBox.margin>
@@ -179,7 +179,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Label fx:id="error_lbl" layoutX="10.0" layoutY="172.0" text="Error:" textFill="RED">
+        <Label fx:id="error_lbl" layoutX="10.0" layoutY="172.0" textFill="RED">
             <VBox.margin>
                 <Insets bottom="15.0" />
             </VBox.margin>

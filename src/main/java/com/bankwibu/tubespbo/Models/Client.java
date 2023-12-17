@@ -6,7 +6,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.time.LocalDate;
-import java.util.BitSet;
 
 public class Client {
     private final StringProperty firstName;

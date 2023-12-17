@@ -4,6 +4,7 @@ import com.bankwibu.tubespbo.Models.Model;
 import com.bankwibu.tubespbo.Views.AdminMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +24,7 @@ public class AdminMenuController implements Initializable {
         create_client_btn.setOnAction(actionEvent -> onCreateClient());
         clients_btn.setOnAction(actionEvent -> onClients());
         deposit_btn.setOnAction(actionEvent -> onDeposit());
+        logout_btn.setOnAction(actionEvent -> onLogout());
     }
 
     private void onCreateClient() {
@@ -35,5 +37,16 @@ public class AdminMenuController implements Initializable {
 
     private void onDeposit() {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
+    }
+
+    private void onLogout() {
+        // Get Stage
+        Stage stage = (Stage) clients_btn.getScene().getWindow();
+        // Close the Admin window
+        Model.getInstance().getViewFactory().closeStage(stage);
+        // Show login window
+        Model.getInstance().getViewFactory().showLoginWindow();
+        // Set Admin Login Success Flag To False
+        Model.getInstance().setAdminLoginSuccessFlag(false);
     }
 }

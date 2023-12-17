@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ViewFactory {
-    private AccountType loginAccounType;
+    private AccountType loginAccountType;
     // Client Views
     private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
@@ -25,17 +25,17 @@ public class ViewFactory {
     private AnchorPane depositView;
 
     public ViewFactory(){
-        this.loginAccounType = AccountType.CLIENT;
+        this.loginAccountType = AccountType.CLIENT;
         this.clientSelectedMenuItem = new SimpleObjectProperty<>();
         this.adminSelectedMenuItem = new SimpleObjectProperty<>();
     }
 
-    public AccountType getLoginAccounType() {
-        return loginAccounType;
+    public AccountType getLoginAccountType() {
+        return loginAccountType;
     }
 
-    public void setLoginAccounType(AccountType loginAccounType) {
-        this.loginAccounType = loginAccounType;
+    public void setLoginAccountType(AccountType loginAccountType) {
+        this.loginAccountType = loginAccountType;
     }
 
     /*

@@ -4,8 +4,10 @@ import com.bankwibu.tubespbo.Models.Model;
 import com.bankwibu.tubespbo.Views.ClientMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class ClientMenuController implements Initializable {
@@ -25,6 +27,7 @@ public class ClientMenuController implements Initializable {
         dashboard_btn.setOnAction(actionEvent -> onDashboard());
         transaction_btn.setOnAction(actionEvent -> onTransactions());
         accounts_btn.setOnAction(actionEvent -> onAccount());
+        logout_btn.setOnAction(actionEvent -> onLogout());
     }
 
     private void onDashboard() {
@@ -39,7 +42,14 @@ public class ClientMenuController implements Initializable {
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
     }
 
-    private void onDeposit() {
-        Model.getInstance().getViewFactory().getClientsView();
+    private void onLogout() {
+        // Get Stage
+        Stage stage = (Stage) dashboard_btn.getScene().getWindow();
+        // Close the client window
+        Model.getInstance().getViewFactory().closeStage(stage);
+        // Show login window
+        Model.getInstance().getViewFactory().showLoginWindow();
+        // Set Client Login Success Flag To False
+        Model.getInstance().setClientLoginSuccessFlag(false);
     }
 }

@@ -24,14 +24,14 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         acc_selector.setItems(FXCollections.observableArrayList(AccountType.CLIENT, AccountType.ADMIN));
-        acc_selector.setValue(Model.getInstance().getViewFactory().getLoginAccounType());
-        acc_selector.valueProperty().addListener(observable -> Model.getInstance().getViewFactory().setLoginAccounType(acc_selector.getValue()));
+        acc_selector.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
+        acc_selector.valueProperty().addListener(observable -> setAcc_selector());
         login_btn.setOnAction(actionEvent -> onLogin());
     }
 
     private void onLogin() {
         Stage stage = (Stage) error_lbl.getScene().getWindow();
-        if (Model.getInstance().getViewFactory().getLoginAccounType() == AccountType.CLIENT){
+        if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT){
             // Evaluate Client Login Credentials
             Model.getInstance().evaluateClientCred(username_fld.getText(), password_fld.getText());
             if (Model.getInstance().getClientLoginSuccessFlag()){
@@ -44,7 +44,6 @@ public class LoginController implements Initializable {
                 error_lbl.setText("No Such Login Credentials.");
             }
         } else {
-            //Model.getInstance().getViewFactory().showAdminWindow();
             // Evaluate Admin Login Credentials
             Model.getInstance().evaluateAdminCred(username_fld.getText(), password_fld.getText());
             if (Model.getInstance().getAdminLoginSuccessFlag()){
@@ -56,6 +55,16 @@ public class LoginController implements Initializable {
                 password_fld.setText("");
                 error_lbl.setText("No Such Login Credentials.");
             }
+        }
+    }
+
+    private void setAcc_selector() {
+        Model.getInstance().getViewFactory().setLoginAccountType(acc_selector.getValue());
+        // Change Payee Address label accordingly
+        if (acc_selector.getValue() == AccountType.ADMIN){
+            username_lbl.setText("Username:");
+        } else {
+            username_lbl.setText("Payee Address:");
         }
     }
 }
