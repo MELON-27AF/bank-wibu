@@ -1,5 +1,6 @@
 package com.bankwibu.tubespbo.Controllers.Client;
 
+import com.bankwibu.tubespbo.Models.Transaction;
 import com.bankwibu.tubespbo.Views.TransactionCellFactory;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
@@ -34,6 +35,7 @@ public class DashboardController implements Initializable {
         transaction_listview.setItems(Model.getInstance().getLatestTransactions());
         transaction_listview.setCellFactory(e -> new TransactionCellFactory());
         send_money_btn.setOnAction(actionEvent -> onSendMoney());
+        accountSummary();
     }
      private void bindData(){
         user_name.textProperty().bind(Bindings.concat("Hi, ").concat(Model.getInstance().getClient().firstNameProperty()));
@@ -64,7 +66,7 @@ public class DashboardController implements Initializable {
              e.printStackTrace();
          }
          // Subtract from sender's savings account
-         Model.getInstance().getDatabaseDriver().updateBalance(sender, amount, "ADD");
+         Model.getInstance().getDatabaseDriver().updateBalance(sender, amount, "SUB");
          // Update the savings account balance
          Model.getInstance().getClient().savingsAccountProperty().get().setBalance(Model.getInstance().getDatabaseDriver().getSavingsAccountBalance(sender));
          // Record new transaction
@@ -74,4 +76,22 @@ public class DashboardController implements Initializable {
          amount_fld.setText("");
          message_fld.setText("");
      }
+
+     // Method calculates all expenses and income
+    private void accountSummary(){
+        double income = 0;
+        double expenses = 0;
+        if (Model.getInstance().getAllTransactions().isEmpty()){
+            Model.getInstance().setAllTransactions();
+        }
+        for (Transaction transaction: Model.getInstance().getAllTransactions()) {
+            if (transaction.senderProperty().get().equals(Model.getInstance().getClient().pAddressProperty().get())){
+                expenses = expenses + transaction.amountProperty().get();
+            } else {
+                income = income + transaction.amountProperty().get();
+            }
+        }
+        income_lbl.setText("+ Rp" + income);
+        expense_lbl.setText("- Rp" + expenses);
+    }
 }

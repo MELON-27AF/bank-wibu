@@ -34,7 +34,7 @@ public class DatabaseDriver {
         ResultSet resultSet = null;
         try{
             statement = this.conn.createStatement();
-            resultSet = statement.executeQuery("SELECT  * FROM Transactions WHERE Sender='"+pAddress+"' OR Receiver='"+pAddress+"' LIMIT "+limit+";");
+            resultSet = statement.executeQuery("SELECT * FROM Transactions WHERE Sender='"+pAddress+"' OR Receiver='"+pAddress+"' LIMIT "+limit+";");
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -84,7 +84,7 @@ public class DatabaseDriver {
         try {
             statement = this.conn.createStatement();
             LocalDate date = LocalDate.now();
-            statement.executeUpdate("INSERT INTO "+
+            statement.executeUpdate("INSERT INTO " +
                     "Transactions(Sender, Receiver, Amount, Date, Message) " +
                     "VALUES ('"+sender+"', '"+receiver+"', "+amount+", '"+date+"', '"+message+"');");
         }catch (SQLException e){
@@ -175,7 +175,7 @@ public class DatabaseDriver {
         try {
             statement = this.conn.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='"+pAddress+"';");
-        }catch (Exception e){
+        }catch (SQLException e){
             e.printStackTrace();
         }
         return resultSet;
