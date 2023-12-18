@@ -17,12 +17,12 @@ public class DatabaseDriver {
     /*
     * Client Section
      **/
-    public ResultSet getClientData(String username, String password) {
+    public ResultSet getClientData(String pAddress, String password) {
         Statement statement;
         ResultSet resultSet = null;
         try{
             statement = this.conn.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='"+username+"' AND Password='"+password+"';");
+            resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='"+pAddress+"' AND Password='"+password+"';");
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -50,7 +50,7 @@ public class DatabaseDriver {
             statement = this.conn.createStatement();
             statement.executeUpdate("INSERT INTO " +
                     "Clients (FirstName, LastName, PayeeAddress, Password, Date)" +
-                    "VALUES ('"+fName+"', '"+lName+"', '"+pAddress+"', '"+password+"'. '"+date.toString()+"');");
+                    "VALUES ('"+fName+"', '"+lName+"', '"+pAddress+"', '"+password+"', '"+date.toString()+"');");
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -80,8 +80,42 @@ public class DatabaseDriver {
         }
     }
 
+    public ResultSet getAllClientsData() {
+        Statement statement;
+        ResultSet resultSet = null;
+        try{
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Clients;");
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+    public ResultSet searchClient(String pAddress) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='"+pAddress+"';");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+    public void depositSavings(String pAddress, double amount) {
+        Statement statement;
+        try {
+            statement = this.conn.createStatement();
+            statement.executeUpdate("UPDATE SavingsAccounts SET Balance="+amount+" WHERE Owner='"+pAddress+"';");
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     /*
-    * Utility Section
+    * Utility Methods
      **/
     public int getLastClientsId() {
         Statement statement;
@@ -89,11 +123,35 @@ public class DatabaseDriver {
         int id = 0;
         try{
             statement = this.conn.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM sqlite_sequence WHERE name='Clients;'");
+            resultSet = statement.executeQuery("SELECT * FROM sqlite_sequence WHERE name='Clients';");
             id = resultSet.getInt("seq");
         }catch (SQLException e){
             e.printStackTrace();
         }
         return id;
+    }
+
+    public ResultSet getCheckingAccountData(String pAddress) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM CheckingAccounts WHERE Owner='"+pAddress+"';");
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+    public ResultSet getSavingsAccountData(String pAddress) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM SavingsAccounts WHERE Owner='"+pAddress+"';");
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return resultSet;
     }
 }

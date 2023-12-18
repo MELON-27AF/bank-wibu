@@ -15,8 +15,8 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
     public ChoiceBox<AccountType> acc_selector;
-    public Label username_lbl;
-    public TextField username_fld;
+    public Label pAddress_lbl;
+    public TextField pAddress_fld;
     public TextField password_fld;
     public Button login_btn;
     public Label error_lbl;
@@ -33,25 +33,25 @@ public class LoginController implements Initializable {
         Stage stage = (Stage) error_lbl.getScene().getWindow();
         if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT){
             // Evaluate Client Login Credentials
-            Model.getInstance().evaluateClientCred(username_fld.getText(), password_fld.getText());
+            Model.getInstance().evaluateClientCred(pAddress_fld.getText(), password_fld.getText());
             if (Model.getInstance().getClientLoginSuccessFlag()){
                 Model.getInstance().getViewFactory().showClientWindow();
                 // Close the login stage
                 Model.getInstance().getViewFactory().closeStage(stage);
             } else {
-                username_fld.setText("");
+                pAddress_fld.setText("");
                 password_fld.setText("");
                 error_lbl.setText("No Such Login Credentials.");
             }
         } else {
             // Evaluate Admin Login Credentials
-            Model.getInstance().evaluateAdminCred(username_fld.getText(), password_fld.getText());
+            Model.getInstance().evaluateAdminCred(pAddress_fld.getText(), password_fld.getText());
             if (Model.getInstance().getAdminLoginSuccessFlag()){
                 Model.getInstance().getViewFactory().showAdminWindow();
                 // Close the login stage
                 Model.getInstance().getViewFactory().closeStage(stage);
             } else {
-                username_fld.setText("");
+                pAddress_fld.setText("");
                 password_fld.setText("");
                 error_lbl.setText("No Such Login Credentials.");
             }
@@ -62,9 +62,9 @@ public class LoginController implements Initializable {
         Model.getInstance().getViewFactory().setLoginAccountType(acc_selector.getValue());
         // Change Payee Address label accordingly
         if (acc_selector.getValue() == AccountType.ADMIN){
-            username_lbl.setText("Username:");
+            pAddress_lbl.setText("Username:");
         } else {
-            username_lbl.setText("Payee Address:");
+            pAddress_lbl.setText("Payee Address:");
         }
     }
 }

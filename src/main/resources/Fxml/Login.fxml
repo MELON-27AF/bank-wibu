@@ -39,7 +39,7 @@
             <Insets bottom="15.0" />
          </VBox.margin>
       </ChoiceBox>
-      <Label fx:id="username_lbl" text="Payee Address:">
+      <Label fx:id="pAddress_lbl" text="Payee Address:">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
@@ -47,7 +47,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="username_fld">
+      <TextField fx:id="pAddress_fld">
          <VBox.margin>
             <Insets bottom="15.0" />
          </VBox.margin>

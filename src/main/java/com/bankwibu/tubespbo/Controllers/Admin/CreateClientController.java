@@ -1,5 +1,6 @@
 package com.bankwibu.tubespbo.Controllers.Admin;
 
+import com.bankwibu.tubespbo.Models.Model;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -7,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class CreateClientController implements Initializable {
@@ -48,15 +51,15 @@ public class CreateClientController implements Initializable {
     }
 
     private void createClient() {
-        // Create checking Account
+        // Create Checking Account
         if (createCheckingAccountFlag){
             createAccount("Checking");
         }
-        // Create savings Account
+        // Create Savings Account
         if (createSavingsAccountFlag){
             createAccount("Savings");
         }
-        // Create Client
+        // Create Clients
         String fName = fName_fld.getText();
         String lName = lName_fld.getText();
         String password = password_fld.getText();

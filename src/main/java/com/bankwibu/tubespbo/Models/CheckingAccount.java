@@ -11,5 +11,12 @@ public class CheckingAccount extends Account {
         super(owner, accountNumber, balance);
         this.transactionLimit = new SimpleIntegerProperty(this, "Transaction Limit", tLimit);
     }
-    public IntegerProperty transactionLimitProperty() {return transactionLimit;}
+
+    public IntegerProperty transactionLimitProperty() {
+        return transactionLimit;
+    }
+    @Override
+    public String toString() {
+        return accountNumberProperty().get();
+    }
 }
