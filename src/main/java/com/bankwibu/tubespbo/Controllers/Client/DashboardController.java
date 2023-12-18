@@ -1,11 +1,15 @@
 package com.bankwibu.tubespbo.Controllers.Client;
 
+import com.bankwibu.tubespbo.Views.TransactionCellFactory;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import com.bankwibu.tubespbo.Models.Model;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -25,6 +29,49 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.user_name.setText("Hi, " + Model.getInstance().getClient().firstNameProperty().get());
+        bindData();
+        initLatestTransactions();
+        transaction_listview.setItems(Model.getInstance().getLatestTransactions());
+        transaction_listview.setCellFactory(e -> new TransactionCellFactory());
+        send_money_btn.setOnAction(actionEvent -> onSendMoney());
     }
+     private void bindData(){
+        user_name.textProperty().bind(Bindings.concat("Hi, ").concat(Model.getInstance().getClient().firstNameProperty()));
+        login_date.setText("Today, " + LocalDate.now());
+        cheking_bal.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().asString());
+        cheking_acc_num.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().accountNumberProperty());
+        savings_bal.textProperty().bind(Model.getInstance().getClient().savingsAccountProperty().get().balanceProperty().asString());
+        savings_acc_num.textProperty().bind(Model.getInstance().getClient().savingsAccountProperty().get().accountNumberProperty());
+     }
+
+     private void initLatestTransactions() {
+        if (Model.getInstance().getLatestTransactions().isEmpty()){
+            Model.getInstance().setLatestTransactions();
+        }
+     }
+
+     private void onSendMoney() {
+        String receiver = payee_fld.getText();
+        double amount = Double.parseDouble(amount_fld.getText());
+        String message = message_fld.getText();
+        String sender = Model.getInstance().getClient().pAddressProperty().get();
+        ResultSet resultSet = Model.getInstance().getDatabaseDriver().searchClient(receiver);
+         try {
+             if (resultSet.isBeforeFirst()){
+                 Model.getInstance().getDatabaseDriver().updateBalance(receiver, amount, "ADD");
+             }
+         }catch (Exception e){
+             e.printStackTrace();
+         }
+         // Subtract from sender's savings account
+         Model.getInstance().getDatabaseDriver().updateBalance(sender, amount, "ADD");
+         // Update the savings account balance
+         Model.getInstance().getClient().savingsAccountProperty().get().setBalance(Model.getInstance().getDatabaseDriver().getSavingsAccountBalance(sender));
+         // Record new transaction
+         Model.getInstance().getDatabaseDriver().newTransaction(sender, receiver, amount, message);
+         // Clear the fields
+         payee_fld.setText("");
+         amount_fld.setText("");
+         message_fld.setText("");
+     }
 }

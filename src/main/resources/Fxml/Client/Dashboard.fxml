@@ -189,7 +189,7 @@
          <VBox.margin>
             <Insets top="15.0" />
          </VBox.margin></TextArea>
-      <Button fx:id="send_money_btn" mnemonicParsing="false" prefHeight="30.0" prefWidth="270.0" style="-fx-background-color: #F05941;" text="Send Money">
+      <Button fx:id="send_money_btn" mnemonicParsing="false" prefHeight="30.0" prefWidth="270.0" style="-fx-background-color: #F05941; -fx-cursor: HAND;" text="Send Money">
          <VBox.margin>
             <Insets top="7.0" />
          </VBox.margin>

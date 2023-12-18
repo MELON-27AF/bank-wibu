@@ -11,7 +11,7 @@ public class Transaction {
     private final ObjectProperty<LocalDate> date;
     private final StringProperty message;
 
-    private Transaction(String sender, String receiver, double amount, LocalDate date, String message) {
+    public Transaction(String sender, String receiver, double amount, LocalDate date, String message) {
         this.sender = new SimpleStringProperty(this, "Sender", sender);
         this.receiver = new SimpleStringProperty(this, "Receiver", receiver);
         this.amount= new SimpleDoubleProperty(this, "Amount", amount);
