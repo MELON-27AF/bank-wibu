@@ -8,7 +8,7 @@ public class DatabaseDriver {
 
     public DatabaseDriver() {
         try {
-            this.conn = DriverManager.getConnection("jdbc:sqlite:mazebank.db");
+            this.conn = DriverManager.getConnection("jdbc:sqlite:wibubank.db");
         } catch (SQLException e){
             e.printStackTrace();
         }

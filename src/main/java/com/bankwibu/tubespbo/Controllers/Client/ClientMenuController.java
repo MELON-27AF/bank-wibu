@@ -26,7 +26,6 @@ public class ClientMenuController implements Initializable {
     private void addListener() {
         dashboard_btn.setOnAction(actionEvent -> onDashboard());
         transaction_btn.setOnAction(actionEvent -> onTransactions());
-        accounts_btn.setOnAction(actionEvent -> onAccount());
         logout_btn.setOnAction(actionEvent -> onLogout());
     }
 

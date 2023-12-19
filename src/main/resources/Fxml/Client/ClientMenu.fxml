@@ -63,34 +63,11 @@
                </DropShadow>
             </effect>
          </Button>
-         <Button fx:id="accounts_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #EEF0E5; -fx-cursor: HAND;" text="Accounts">
-            <graphic>
-               <FontAwesomeIconView fill="#f05941" glyphName="ADDRESS_BOOK_ALT" size="20" />
-            </graphic>
-            <VBox.margin>
-               <Insets bottom="15.0" left="20.0" />
-            </VBox.margin>
-            <effect>
-               <DropShadow blurType="ONE_PASS_BOX" offsetX="5.0" offsetY="5.0">
-                  <color>
-                     <Color red="0.6627451181411743" green="0.6627451181411743" blue="0.6627451181411743" />
-                  </color>
-               </DropShadow>
-            </effect>
-         </Button>
          <Line endX="120.0">
             <VBox.margin>
                <Insets bottom="15.0" left="20.0" />
             </VBox.margin>
          </Line>
-         <Button fx:id="profile_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #f05941; -fx-cursor: HAND;" text="Profile" textFill="WHITE">
-            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="USER" size="20" />
-            </graphic>
-            <VBox.margin>
-               <Insets bottom="15.0" left="20.0" />
-            </VBox.margin>
-         </Button>
          <Button fx:id="logout_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #f05941; -fx-cursor: HAND;" text="Logout" textFill="WHITE">
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="20" />
