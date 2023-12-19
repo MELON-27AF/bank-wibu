@@ -8,11 +8,12 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bankwibu.tubespbo.Controllers.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom left, #750E21, #1B4242);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bankwibu.tubespbo.Controllers.LoginController">
    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #F05941;">
       <FontAwesomeIconView fill="#872341" glyphName="BANK" size="35">
          <VBox.margin>
@@ -25,46 +26,46 @@
          </font>
       </Text>
    </VBox>
-   <VBox layoutX="231.2" layoutY="18.4" prefHeight="366.0" prefWidth="350.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="18.0">
-      <Label text="Choose Your Account Type:">
+   <VBox alignment="CENTER" layoutX="231.2" layoutY="18.4" prefHeight="366.0" prefWidth="350.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="18.0">
+      <HBox prefHeight="100.0" prefWidth="350.0">
+         <children>
+            <Label text="Choose Your Account Type:" textFill="WHITE">
+               <font>
+                  <Font name="Futura LT Heavy" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="acc_selector" prefWidth="150.0" style="-fx-background-color: #F05941; -fx-cursor: HAND;" />
+         </children>
+      </HBox>
+      <Label fx:id="pAddress_lbl" text="Payee Address:" textFill="WHITE">
          <VBox.margin>
-            <Insets bottom="10.0" />
+            <Insets bottom="5.0" right="100.0" />
          </VBox.margin>
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Futura LT Heavy" size="14.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="acc_selector" prefWidth="150.0" style="-fx-background-color: #068FFF; -fx-cursor: HAND; -fx-font-weight: bold;">
-         <VBox.margin>
-            <Insets bottom="15.0" />
-         </VBox.margin>
-      </ChoiceBox>
-      <Label fx:id="pAddress_lbl" text="Payee Address:">
-         <VBox.margin>
-            <Insets bottom="10.0" />
-         </VBox.margin>
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="pAddress_fld" promptText="Payee Address">
+      <TextField fx:id="pAddress_fld" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Payee Address" style="-fx-background-radius: 15;">
          <VBox.margin>
             <Insets bottom="15.0" />
          </VBox.margin>
       </TextField>
-      <Label text="Password:">
+      <Label text="Password:" textFill="WHITE">
          <VBox.margin>
-            <Insets bottom="10.0" />
+            <Insets bottom="5.0" right="130.0" />
          </VBox.margin>
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Futura LT Heavy" size="14.0" />
          </font>
       </Label>
-      <PasswordField fx:id="password_fld" promptText="Password">
+      <PasswordField fx:id="password_fld" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Password" style="-fx-background-radius: 15;">
          <VBox.margin>
             <Insets bottom="15.0" />
          </VBox.margin></PasswordField>
-      <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="381.0" style="-fx-background-color: #068FFF; -fx-cursor: HAND;" text="Login" textFill="WHITE">
+      <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: #F05941;" text="Login" textFill="WHITE">
          <VBox.margin>
             <Insets bottom="15.0" />
          </VBox.margin>

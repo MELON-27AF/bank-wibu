@@ -4,6 +4,7 @@ import com.bankwibu.tubespbo.Models.Model;
 import com.bankwibu.tubespbo.Models.Transaction;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
@@ -20,6 +21,7 @@ public class TransactionCellController implements Initializable {
     public Label amount_lbl;
 
     private final Transaction transaction;
+    public Button message_btn;
 
     public TransactionCellController(Transaction transaction) {
         this.transaction = transaction;
@@ -31,6 +33,7 @@ public class TransactionCellController implements Initializable {
         receive_lbl.textProperty().bind(transaction.receiverProperty());
         amount_lbl.textProperty().bind(transaction.amountProperty().asString());
         trans_date_lbl.textProperty().bind(transaction.dateProperty().asString());
+        message_btn.setOnAction(actionEvent -> Model.getInstance().getViewFactory().showMessageWindow(transaction.senderProperty().get(), transaction.messageProperty().get()));
         transactionIcons();
     }
 
