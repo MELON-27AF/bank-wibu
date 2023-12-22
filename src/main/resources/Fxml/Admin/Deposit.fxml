@@ -33,7 +33,7 @@
                </DropShadow>
             </effect>
          </TextField>
-         <Button fx:id="search_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #F05941;" text="Button" textFill="WHITE">
+         <Button fx:id="search_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #65B741;" text="Button" textFill="WHITE">
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" selectionStart="0" size="20" />
             </graphic>
@@ -73,7 +73,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <Button fx:id="deposit_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="190.0" style="-fx-background-color: #F05941;" text="Deposit" textFill="WHITE">
+            <Button fx:id="deposit_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="190.0" style="-fx-background-color: #65B741;" text="Deposit" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="20" />
                </graphic>

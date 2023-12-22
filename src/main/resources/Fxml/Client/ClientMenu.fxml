@@ -12,15 +12,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" style="-fx-background-radius: 15; -fx-background-color: #F5F7F8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bankwibu.tubespbo.Controllers.Client.ClientMenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" style="-fx-background-radius: 15; -fx-background-color: #192655;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bankwibu.tubespbo.Controllers.Client.ClientMenuController">
    <AnchorPane prefHeight="750.0" prefWidth="160.0">
       <VBox alignment="CENTER" prefHeight="80.0" prefWidth="160.0" AnchorPane.bottomAnchor="670.4" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <FontAwesomeIconView fill="#f05941" glyphName="BANK" size="35">
+         <FontAwesomeIconView fill="#00a9ff" glyphName="BANK" size="35">
             <VBox.margin>
                <Insets top="10.0" />
             </VBox.margin>
          </FontAwesomeIconView>
-         <Text fill="#872341" strokeType="OUTSIDE" strokeWidth="0.0" text="Wibu Bank">
+         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Wibu Bank">
             <font>
                <Font name="System Bold" size="24.0" />
             </font>
@@ -35,7 +35,7 @@
          </opaqueInsets>
          <Button fx:id="dashboard_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #EEF0E5; -fx-cursor: HAND;" text="Dashboard">
             <graphic>
-               <FontAwesomeIconView fill="#f05941" glyphName="HOME" size="20" />
+               <FontAwesomeIconView fill="#65b741" glyphName="HOME" size="20" />
             </graphic>
             <VBox.margin>
                <Insets bottom="15.0" left="20.0" />
@@ -50,7 +50,7 @@
          </Button>
          <Button fx:id="transaction_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #EEF0E5; -fx-cursor: HAND;" text="Transaction">
             <graphic>
-               <FontAwesomeIconView fill="#f05941" glyphName="HANDSHAKE_ALT" size="20" />
+               <FontAwesomeIconView fill="#65b741" glyphName="HANDSHAKE_ALT" size="20" />
             </graphic>
             <VBox.margin>
                <Insets bottom="15.0" left="20.0" />
@@ -68,7 +68,7 @@
                <Insets bottom="15.0" left="20.0" />
             </VBox.margin>
          </Line>
-         <Button fx:id="logout_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #f05941; -fx-cursor: HAND;" text="Logout" textFill="WHITE">
+         <Button fx:id="logout_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #65B741; -fx-cursor: HAND;" text="Logout" textFill="WHITE">
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="20" />
             </graphic>
@@ -77,8 +77,8 @@
             </VBox.margin>
          </Button>
       </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="11.0" layoutY="616.0" prefHeight="120.0" prefWidth="157.0" style="-fx-background-color: #22092C; -fx-background-radius: 10;" AnchorPane.bottomAnchor="14.399999999999977" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="12.200000000000017">
-         <Text fill="#f05941" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Suggestion/Bug?">
+      <VBox alignment="TOP_CENTER" layoutX="11.0" layoutY="616.0" prefHeight="120.0" prefWidth="157.0" style="-fx-background-color: #00a9ff; -fx-background-radius: 10;" AnchorPane.bottomAnchor="14.399999999999977" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="12.200000000000017">
+         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Suggestion/Bug?">
             <VBox.margin>
                <Insets top="10.0" />
             </VBox.margin>
@@ -91,7 +91,7 @@
                <Insets bottom="10.0" top="5.0" />
             </VBox.margin>
          </Label>
-         <Button fx:id="report_btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #f05941; -fx-cursor: HAND;" text="Report" textFill="WHITE">
+         <Button fx:id="report_btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #65B741; -fx-cursor: HAND;" text="Report" textFill="WHITE">
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
             </graphic>

@@ -71,7 +71,7 @@
          <Font size="14.0" />
       </font></Text>
    <HBox layoutX="53.0" layoutY="160.0" prefHeight="180.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10 0 0 10;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="120.0">
-      <AnchorPane prefHeight="150.0" prefWidth="295.0" style="-fx-background-color: #F05941; -fx-background-radius: 15;">
+      <AnchorPane prefHeight="150.0" prefWidth="295.0" style="-fx-background-color: #00a9ff; -fx-background-radius: 15;">
          <Label fx:id="cheking_bal" layoutX="39.0" layoutY="29.0" text="Rp. 100.000" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0">
             <font>
                <Font size="36.0" />
@@ -101,7 +101,7 @@
             <Insets left="10.0" right="10.0" top="10.0" />
          </HBox.margin>
       </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="295.0" style="-fx-background-color: #F05941; -fx-background-radius: 15;">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="295.0" style="-fx-background-color: #00a9ff; -fx-background-radius: 15;">
          <Label fx:id="savings_bal" layoutX="39.0" layoutY="29.0" text="Rp. 100.000" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0">
             <font>
                <Font size="36.0" />
@@ -189,7 +189,7 @@
          <VBox.margin>
             <Insets top="15.0" />
          </VBox.margin></TextArea>
-      <Button fx:id="send_money_btn" mnemonicParsing="false" prefHeight="30.0" prefWidth="270.0" style="-fx-background-color: #F05941; -fx-cursor: HAND;" text="Send Money">
+      <Button fx:id="send_money_btn" mnemonicParsing="false" prefHeight="30.0" prefWidth="270.0" style="-fx-background-color: #00a9ff; -fx-cursor: HAND;" text="Send Money">
          <VBox.margin>
             <Insets top="7.0" />
          </VBox.margin>

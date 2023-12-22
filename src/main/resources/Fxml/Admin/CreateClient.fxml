@@ -164,7 +164,7 @@
                 </DropShadow>
             </effect>
         </TextField>
-        <Button fx:id="create_client_btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f05941; -fx-cursor: HAND;" text="Create New Client">
+        <Button fx:id="create_client_btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #65B741; -fx-cursor: HAND;" text="Create New Client">
             <VBox.margin>
                 <Insets bottom="15.0" />
             </VBox.margin>

@@ -43,7 +43,7 @@
          <Font name="System Bold" size="14.0" />
       </font>
    </Label>
-   <Label fx:id="amount_lbl" layoutX="508.0" layoutY="24.0" style="-fx-background-color: #F05941; -fx-background-radius: 2;" text="100.000" textFill="WHITE" AnchorPane.bottomAnchor="22.6" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="22.0">
+   <Label fx:id="amount_lbl" layoutX="508.0" layoutY="24.0" style="-fx-background-color: #00a9ff; -fx-background-radius: 2;" text="100.000" textFill="WHITE" AnchorPane.bottomAnchor="22.6" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="22.0">
       <graphic>
          <FontAwesomeIconView fill="WHITE" glyphName="DOLLAR" text="Rp.">
             <effect>

@@ -10,72 +10,68 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="50.0" prefWidth="750.0" style="-fx-background-radius: 15; -fx-background-color: #ffffff;"
-            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="50.0" prefWidth="750.0" style="-fx-background-radius: 15; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <effect>
       <DropShadow blurType="ONE_PASS_BOX" offsetX="5.0" offsetY="5.0">
          <color>
-            <Color red="0.7157894968986511" green="0.7157894968986511" blue="0.7157894968986511"/>
+            <Color red="0.7157894968986511" green="0.7157894968986511" blue="0.7157894968986511" />
          </color>
       </DropShadow>
    </effect>
-   <FontAwesomeIconView glyphName="USER" size="20" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0"/>
-   <HBox alignment="CENTER_LEFT" layoutX="90.0" layoutY="-25.0" prefHeight="40.0" prefWidth="550.0"
-         AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="5.0">
+   <FontAwesomeIconView glyphName="USER" size="20" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+   <HBox alignment="CENTER_LEFT" layoutX="90.0" layoutY="-25.0" prefHeight="40.0" prefWidth="550.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="5.0">
       <Label fx:id="fName_lbl" text="Miseri">
          <HBox.margin>
-            <Insets left="20.0"/>
+            <Insets left="20.0" />
          </HBox.margin>
          <font>
-            <Font size="16.0"/>
+            <Font size="16.0" />
          </font>
       </Label>
       <Label fx:id="lName_lbl" text="Astar">
          <HBox.margin>
-            <Insets left="20.0"/>
+            <Insets left="20.0" />
          </HBox.margin>
          <font>
-            <Font size="16.0"/>
+            <Font size="16.0" />
          </font>
       </Label>
       <Label fx:id="pAddress_lbl" text="\@mAstral">
          <HBox.margin>
-            <Insets left="20.0"/>
+            <Insets left="20.0" />
          </HBox.margin>
          <font>
-            <Font size="16.0"/>
+            <Font size="16.0" />
          </font>
       </Label>
       <Label fx:id="ch_acc_lbl" text="22997">
          <HBox.margin>
-            <Insets left="20.0"/>
+            <Insets left="20.0" />
          </HBox.margin>
          <font>
-            <Font name="System Bold" size="16.0"/>
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
       <Label fx:id="sv_acc_lbl" text="22365">
          <HBox.margin>
-            <Insets left="20.0"/>
+            <Insets left="20.0" />
          </HBox.margin>
          <font>
-            <Font name="System Bold" size="16.0"/>
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
       <Label fx:id="date_lbl" text="2023-12-17">
          <HBox.margin>
-            <Insets left="20.0"/>
+            <Insets left="20.0" />
          </HBox.margin>
          <font>
-            <Font size="16.0"/>
+            <Font size="16.0" />
          </font>
       </Label>
    </HBox>
-   <Button layoutX="684.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #ff0000;" text="Delete"
-           textFill="WHITE" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+   <Button layoutX="684.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #65B741;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
       <graphic>
-         <FontAwesomeIconView fx:id="delete_btn" fill="WHITE" glyphName="WINDOW_CLOSE_ALT" size="20"/>
+         <FontAwesomeIconView fx:id="delete_btn" fill="WHITE" glyphName="WINDOW_CLOSE_ALT" size="20" />
       </graphic>
    </Button>
 </AnchorPane>
